@@ -3,7 +3,8 @@ if [ -z "$JAVA_HOME" ] ; then
   if [ -d "/System/Library/Frameworks/JavaVM.framework/Home" ] ; then
     export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home
   else
-    echo "Error: JAVA_HOME is not defined."
+    echo "Error: JAVA_HOME is not defined." >&2
+    exit 1
   fi
 fi
 if [ "$1" = "clean" ] ; then rm -rf temp bin ; fi
